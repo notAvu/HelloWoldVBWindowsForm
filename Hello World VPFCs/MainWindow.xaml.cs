@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MisClases;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,8 +24,31 @@ namespace Hello_World_VPFCs
         public MainWindow()
         {
             InitializeComponent();
-            string str = Cajita.Text;
-            str.Append
+        }
+
+        /// <summary>
+        /// evento asociado al click del boton "Button"
+        /// que muestra por pantalla un saludo al usuario 
+        /// </summary>
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            clsPersona usuario = new clsPersona();
+            usuario.Nombre = cajita.Text;
+
+            if (usuario.Nombre.Length > 0)
+            {
+                
+                MessageBox.Show($"Hola {usuario.Nombre}");
+            }
+            else 
+            {
+                MessageBox.Show("Por favor introduzca su nombre");
+            }
+        }
+
+        private void Cajita_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            
         }
     }
 }

@@ -32,12 +32,12 @@ namespace Hello_World_VPFCs
         /// </summary>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            clsPersona usuario = new clsPersona();
-            usuario.Nombre = cajita.Text;
+            clsPersona usuario;
 
-            if (usuario.Nombre.Length > 0)
+            if (cajita.Text.Length > 0)
             {
-                
+                usuario = new clsPersona();
+                usuario.Nombre = cajita.Text;
                 MessageBox.Show($"Hola {usuario.Nombre}");
             }
             else 

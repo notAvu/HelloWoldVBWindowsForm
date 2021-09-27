@@ -34,21 +34,16 @@ namespace Hello_World_VPFCs
         {
             clsPersona usuario;
 
-            if (cajita.Text.Length > 0)
+            if (string.IsNullOrEmpty(cajita.Text))
+            {
+                MessageBox.Show("Por favor introduzca su nombre");
+            }
+            else
             {
                 usuario = new clsPersona();
                 usuario.Nombre = cajita.Text;
                 MessageBox.Show($"Hola {usuario.Nombre}");
             }
-            else 
-            {
-                MessageBox.Show("Por favor introduzca su nombre");
-            }
-        }
-
-        private void Cajita_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            
         }
     }
 }
